@@ -11,27 +11,13 @@
 <html>
 <head>
     <title>Title</title>
-    <style>
-        td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align:center;
-        }
-        .sub {
-            padding-top: 12px;
-            padding-bottom: 12px;
-            text-align: center;
-            background-color: #006bb3;
-            color: white;
-        }
-    </style>
 </head>
 <body>
-<h1>자유게시판 상세 정보</h1>
+<h1>물품 상세 정보</h1>
 <table>
     <tr>
-        <td class="sub">번호</td>
-        <td>${view.seq}</td>
+        <td class="sub">사진</td>
+        <td>${view.photoURL}</td>
     </tr>
     <tr>
         <td class="sub">제목</td>
@@ -42,14 +28,27 @@
         <td>${view.writer}</td>
     </tr>
     <tr>
+        <td class="sub">가격</td>
+        <td>${view.price}</td>
+    </tr>
+    <tr>
         <td class="sub">내용</td>
         <td>${view.content}</td>
     </tr>
     <tr>
-        <td class="sub">수정일자</td>
-        <td>${view.regdate}</td>
+        <td class="sub">구매방법</td>
+        <td>${view.howPurchase}</td>
+    </tr>
+    <tr>
+        <td class="sub">올린날짜</td>
+        <td>${view.createTime}</td>
+    </tr>
+    <tr>
+        <td class="sub">조회수</td>
+        <td>${view.viewCnt}</td>
     </tr>
 </table>
+<input type="button" value="끌어올리기" />
 <input type="button" value="뒤로가기" onclick="history.back()"/>
 </body>
 </html>

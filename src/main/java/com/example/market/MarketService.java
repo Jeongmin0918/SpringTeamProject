@@ -2,10 +2,10 @@ package com.example.market;
 
 import java.util.List;
 
-public interface BoardService {
-    public int insertBoard(BoardVO vo);
-    public int deleteBoard(int seq);
-    public int updateBoard(BoardVO vo);
-    public BoardVO getBoard(int seq);
-    public List<BoardVO> getBoardList();
+public interface MarketService {
+    public int insertMarket(MarketVO vo);
+    public int deleteMarket(int id);
+    public int updateMarket(MarketVO vo);
+    public MarketVO getMarket(int id);
+    public List<MarketVO> getMarketList();
 }

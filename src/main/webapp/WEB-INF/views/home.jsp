@@ -12,8 +12,9 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Hello World!</h1>
-<P>안녕하세요.</P>
-<P><a href ="board/list">게시판으로 이동</a></P>
+<P>마켓에 오신 것을 환영합니다.</P>
+ID: <input type="text" name="id"><br>
+PASSWORD: <input type="password" name="pw"><br>
+<a href="market/list"><input type="submit" value="로그인"></a>
 </body>
 </html>

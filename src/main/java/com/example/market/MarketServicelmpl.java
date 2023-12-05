@@ -6,32 +6,32 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class BoardServiceImpl implements BoardService{
+public class MarketServicelmpl implements MarketService {
     @Autowired
-    BoardDAO boardDAO;
+    MarketDAO marketDAO;
 
     @Override
-    public int insertBoard(BoardVO vo) {
-        return boardDAO.insertBoard(vo);
+    public int insertMarket(MarketVO vo) {
+        return marketDAO.insertMarket(vo);
     }
 
     @Override
-    public int deleteBoard(int seq) {
-        return boardDAO.deleteBoard(seq);
+    public int deleteMarket(int id) {
+        return marketDAO.deleteMarket(id);
     }
 
     @Override
-    public int updateBoard(BoardVO vo) {
-        return boardDAO.updateBoard(vo);
+    public int updateMarket(MarketVO vo) {
+        return marketDAO.updateMarket(vo);
     }
 
     @Override
-    public BoardVO getBoard(int seq) {
-        return boardDAO.getBoard(seq);
+    public MarketVO getMarket(int id) {
+        return marketDAO.getMarket(id);
     }
 
     @Override
-    public List<BoardVO> getBoardList() {
-        return boardDAO.getBoardList();
+    public List<MarketVO> getMarketList() {
+        return marketDAO.getMarketList();
     }
 }

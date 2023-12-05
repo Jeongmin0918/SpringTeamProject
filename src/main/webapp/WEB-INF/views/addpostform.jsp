@@ -9,12 +9,15 @@
 </head>
 <body>
 
-<h1>게시물 추가</h1>
+<h1>당근 물품 추가</h1>
 <form action="addok" method="post">
 <table id="edit">
-<tr><td>제목:</td><td><input type="text" name="title"/></td></tr>
-<tr><td>글쓴이:</td><td><input type="text" name="writer"/></td></tr>
-<tr><td>내용:</td><td><textarea cols="50" rows="5" name="content"></textarea></td></tr>
+    <tr><td>사진:</td><td><input type="file" name="photoURL"/></td></tr>
+    <tr><td>제목:</td><td><input type="text" name="title"/></td></tr>
+    <tr><td>글쓴이:</td><td><input type="text" name="writer"/></td></tr>
+    <tr><td>가격:</td><td><input type="text" name="price"/></td><td>원</td></tr>
+    <tr><td>내용:</td><td><textarea cols="50" rows="5" name="content"></textarea></td></tr>
+    <tr><td>구매방법(택배/직거래):</td><td><input type="text" name="howPurchase"/></td></tr>
 </table>
     <button type="button" onclick="location.href='list'">목록보기</button>
     <button type="submit">등록하기</button>
