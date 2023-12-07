@@ -12,10 +12,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class MarketController {
     @Autowired
     MarketServicelmpl marketServicelmpl;
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String marketist(Model model){
-        model.addAttribute("list", marketServicelmpl.getMarketList());
-        return "list";
+//    @RequestMapping(value = "/list", method = RequestMethod.GET)
+//    public String marketist(Model model){
+//        model.addAttribute("list", marketServicelmpl.getMarketList());
+//        return "list";
+//    }
+    @RequestMapping(value = "/list")
+    public String marketist(){
+        return "board";
     }
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String addPost(){
@@ -53,5 +57,10 @@ public class MarketController {
         MarketVO marketVO = marketServicelmpl.getMarket(id);
         model.addAttribute("view", marketVO);
         return "view";
+    }
+
+    @RequestMapping(value="/login")
+    public String login(){
+        return "login";
     }
 }

@@ -13,6 +13,7 @@ import java.util.List;
 public class MarketDAO {
     @Autowired
     JdbcTemplate jdbcTemplate;
+
     public int insertMarket(MarketVO vo){
         String sql = "insert into market (title, writer, price, content, howPurchase) values("
                 + "'" + vo.getTitle() + "',"
