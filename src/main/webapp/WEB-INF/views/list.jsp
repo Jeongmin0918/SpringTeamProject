@@ -27,10 +27,10 @@
     <%--%>--%>
     <title>Title</title>
     <script>
-        // function delete_ok(id){
-        //     var a = confirm("정말로 삭제하겠습니까?");
-        //     if(a) location.href='deleteok/' + id;
-        // }
+        function delete_ok(id){
+            var a = confirm("정말로 삭제하겠습니까?");
+            if(a) location.href='deleteok/' + id;
+        }
 
     </script>
 </head>
@@ -42,9 +42,10 @@
         <th>사진</th>
         <th>제목</th>
         <th>글쓴이</th>
-        <th>올린날짜</th>
+        <th>시간</th>
         <th>조회수</th>
         <th>수정</th>
+        <th>조회</th>
         <th>삭제</th>
     </tr>
     <c:forEach items="${list}" var="u">
@@ -57,6 +58,7 @@
             <td>${u.viewCnt}</td>
             <td><a href="editform/${u.id}">글수정</a></td>
             <td><a href="view/${u.id}">글조회</a></td>
+            <td><a href="javascript:delete_ok('${u.id}')">글삭제</a></td>
         </tr>
     </c:forEach>
 </table>

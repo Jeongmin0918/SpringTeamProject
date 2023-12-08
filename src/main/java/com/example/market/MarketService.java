@@ -9,5 +9,5 @@ public interface MarketService {
     public MarketVO getMarket(int id);
     public List<MarketVO> getMarketList();
     public int updateViewCnt(int id);
-    public void updateExposeTime(int id);
+//    public void updateExposeTime(int id);
 }

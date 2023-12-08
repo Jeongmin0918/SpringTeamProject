@@ -47,6 +47,7 @@ public class MarketDAO {
             vo.setId(rs.getInt("id"));
             vo.setTitle(rs.getString("title"));
 //            vo.setEmail(rs.getString("email"));
+//            vo.setPassword(rs.getString("pw"));
             vo.setPrice(rs.getInt("price"));
             vo.setContent(rs.getString("content"));
             vo.setHowPurchase(rs.getString("howPurchase"));
@@ -67,7 +68,7 @@ public class MarketDAO {
     }
 
     public List<MarketVO> getMarketList(){
-        String sql = "select * from market order by createtime desc";
+        String sql = "select * from market order by exposeTime desc";
         return jdbcTemplate.query(sql, new MarketRowMapper());
     }
 
@@ -76,8 +77,8 @@ public class MarketDAO {
         return jdbcTemplate.update(sql, id);
     }
 
-    public void updateExposeTime(int id) {
-        String sql = "update market set exposeTime = now() where id = ?";
-        jdbcTemplate.update(sql, id);
-    }
+//    public MarketVO updateExposeTime(int id) {
+//        String sql = "UPDATE market SET exposeTime = NOW() WHERE id = ?";
+//        return jdbcTemplate.queryForObject(sql,new Object[]{id}, new MarketRowMapper());
+//    }
 }
