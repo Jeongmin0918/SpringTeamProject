@@ -17,7 +17,11 @@ public class MarketDAO {
     JdbcTemplate jdbcTemplate;
 
     public int insertMarket(MarketVO vo){
-        String sql = "insert into market (title, price, content, howPurchase) values(?,?,?,?)";
+        String sql = "insert into market (title, price, content, howPurchase) values("
+                + "'" + vo.getTitle() + "',"
+                + "'" + vo.getPrice() + "',"
+                + "'" + vo.getContent() + "',"
+                + "'" + vo.getHowPurchase() + "')";
         return jdbcTemplate.update(sql);
     }
 
@@ -46,6 +50,7 @@ public class MarketDAO {
             vo.setPrice(rs.getInt("price"));
             vo.setContent(rs.getString("content"));
             vo.setHowPurchase(rs.getString("howPurchase"));
+            vo.setViewCnt(rs.getInt("viewCnt"));
             Timestamp createTimeStamp = rs.getTimestamp("createTime");
             LocalDateTime createTime = createTimeStamp.toLocalDateTime();
             vo.setCreateTime(createTime);
@@ -68,8 +73,6 @@ public class MarketDAO {
 
     public int updateViewCnt(int id) {
         String sql = "update market set viewCnt = viewCnt + 1 where id = ?";
-//        jdbcTemplate.update(sql, id);
-//        return getMarket(id).getViewCnt();
         return jdbcTemplate.update(sql, id);
     }
 

@@ -13,7 +13,7 @@
 </head>
 <body>
 <h1>당근 물품 추가</h1>
-<form action="addok" method="post" enctype="multipart/form-data">
+<form action="addok" method="post">
     <table id="edit">
         <tr><td>사진:</td><td><input type="file" name="photoURL"/></td></tr>
         <tr><td>제목:</td><td><input type="text" name="title"/></td></tr>

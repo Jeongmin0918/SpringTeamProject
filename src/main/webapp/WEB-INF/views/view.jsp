@@ -49,6 +49,6 @@
     </tr>
 </table>
 <button onclick="updateExposeTime(${u.id})">끌어올리기</button>
-<input type="button" value="뒤로가기" onclick="history.back()"/>
+<input type="button" value="뒤로가기" onclick="window.location.href='${pageContext.request.contextPath}/market/list'"/>
 </body>
 </html>

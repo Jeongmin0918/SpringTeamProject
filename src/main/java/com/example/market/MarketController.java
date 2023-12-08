@@ -13,7 +13,7 @@ public class MarketController {
     @Autowired
     MarketServicelmpl marketServicelmpl;
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String marketist(Model model){
+    public String marketList(Model model){
         model.addAttribute("list", marketServicelmpl.getMarketList());
         return "list";
     }
@@ -51,7 +51,8 @@ public class MarketController {
     @RequestMapping(value = "/view/{id}", method = RequestMethod.GET)
     public String boardview(@PathVariable("id") int id, Model model){
         MarketVO marketVO = marketServicelmpl.getMarket(id);
-        model.addAttribute("view", marketVO);
+        marketServicelmpl.updateViewCnt(id);
+        model.addAttribute("u", marketVO);
         return "view";
     }
 }

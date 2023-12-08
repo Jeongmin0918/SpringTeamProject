@@ -2,10 +2,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.org.word</groupId>
-  <artifactId>SpringProject2</artifactId>
+  <artifactId>SProject</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>SpringProject2 Maven Webapp</name>
+  <name>SProject Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -45,6 +45,6 @@
 
   </dependencies>
   <build>
-    <finalName>SpringProject2</finalName>
+    <finalName>SProject</finalName>
   </build>
 </project>

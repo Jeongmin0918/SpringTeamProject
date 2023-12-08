@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 		 pageEncoding="UTF-8" isELIgnored="false"%>
-<%@page import="com.example.MarketDAO, com.example.market.MarketVO"%>
+<%@page import="com.example.market.MarketDAO, com.example.market.MarketVO"%>
 <!DOCTYPE html>
 <html>
 <head>
