@@ -1,17 +1,19 @@
 package com.example.market;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class MarketVO {
     private int id;
     private String photoURL;
     private String title;
-    private String writer;
+    private String email;
+    private String password;
     private int price;
     private String content;
     private String howPurchase;
-    private Date createTime;
-    private Date exposeTime;
+    private LocalDateTime createTime;
+    private LocalDateTime exposeTime;
     private int viewCnt;
 
     public int getId() {
@@ -38,12 +40,20 @@ public class MarketVO {
         this.title = title;
     }
 
-    public String getWriter() {
-        return writer;
+    public String getEmail() {
+        return email;
     }
 
-    public void setWriter(String writer) {
-        this.writer = writer;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public int getPrice() {
@@ -70,19 +80,20 @@ public class MarketVO {
         this.howPurchase = howPurchase;
     }
 
-    public Date getCreateTime() {
+
+    public LocalDateTime getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(LocalDateTime createTime) {
         this.createTime = createTime;
     }
 
-    public Date getExposeTime() {
+    public LocalDateTime getExposeTime() {
         return exposeTime;
     }
 
-    public void setExposeTime(Date exposeTime) {
+    public void setExposeTime(LocalDateTime exposeTime) {
         this.exposeTime = exposeTime;
     }
 

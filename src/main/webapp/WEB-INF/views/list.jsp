@@ -7,14 +7,31 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" isELIgnored="false"%>
+<%--<%@ page import ="com.example.*, java.io.File" %>--%>
+<%--<%@ page import ="com.oreilly.servlet.*" %>--%>
+<%--<%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>--%>
 <html>
 <head>
+    <%--<%--%>
+    <%--        String filename = "";--%>
+    <%--        int sizeLimit = 15 * 1024 * 1024;--%>
+
+    <%--        String realPath = request.getServletContext().getRealPath("resources");--%>
+    <%--        File dir = new File(realPath);--%>
+    <%--        if (!dir.exists()) dir.mkdirs();--%>
+
+    <%--        MultipartRequest multpartRequest = null;--%>
+    <%--        multpartRequest = new MultipartRequest(request, realPath,--%>
+    <%--                sizeLimit, "utf-8",new DefaultFileRenamePolicy());--%>
+    <%--        filename = multpartRequest.getFilesystemName("img");--%>
+    <%--%>--%>
     <title>Title</title>
     <script>
-        function delete_ok(id){
-            var a = confirm("정말로 삭제하겠습니까?");
-            if(a) location.href='deleteok/' + id;
-        }
+        // function delete_ok(id){
+        //     var a = confirm("정말로 삭제하겠습니까?");
+        //     if(a) location.href='deleteok/' + id;
+        // }
+
     </script>
 </head>
 <body>
@@ -35,8 +52,8 @@
             <td>${u.id}</td>
             <td>${u.photoURL}</td>
             <td>${u.title}</td>
-            <td>${u.writer}</td>
-            <td>${u.createTime}</td>
+            <td>${u.email}</td>
+            <td>${u.exposeTime}</td>
             <td>${u.viewCnt}</td>
             <td><a href="editform/${u.id}">글수정</a></td>
             <td><a href="view/${u.id}">글조회</a></td>

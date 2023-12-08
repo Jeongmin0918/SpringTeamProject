@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/market")
@@ -13,8 +14,9 @@ public class MarketController {
     @Autowired
     MarketServicelmpl marketServicelmpl;
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String marketist(Model model){
+    public String marketList(Model model){
         model.addAttribute("list", marketServicelmpl.getMarketList());
+
         return "list";
     }
     @RequestMapping(value = "/add", method = RequestMethod.GET)
@@ -49,9 +51,15 @@ public class MarketController {
         return "redirect:../list";
     }
     @RequestMapping(value = "/view/{id}", method = RequestMethod.GET)
-    public String boardview(@PathVariable("id") int id, Model model){
+    public String marketview(@PathVariable("id") int id, Model model){
         MarketVO marketVO = marketServicelmpl.getMarket(id);
-        model.addAttribute("view", marketVO);
+        marketServicelmpl.updateViewCnt(id);
+        model.addAttribute("u", marketVO);
         return "view";
     }
+    @RequestMapping(value = "/updateExposeTime/{id}", method = RequestMethod.GET)
+    public void updateExposeTime(@PathVariable("id") int id) {
+        marketServicelmpl.updateExposeTime(id);
+    }
+
 }
