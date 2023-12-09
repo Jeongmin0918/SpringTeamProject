@@ -32,6 +32,19 @@ public class MarketServicelmpl implements MarketService {
 
     @Override
     public List<MarketVO> getMarketList() {
+//        List<MarketVO> list = marketDAO.getMarketList();
+//        for(MarketVO item : list){
+//            System.out.println(item.getTitle() + " " + item.getViewCnt());
+//        }
+//        return list;
         return marketDAO.getMarketList();
     }
+
+    @Override
+    public int updateViewCnt(int id) {
+        return marketDAO.updateViewCnt(id);
+    }
+//    @Override
+//    public void updateExposeTime(int id) {
+//    }
 }

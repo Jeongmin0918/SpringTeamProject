@@ -1,8 +1,10 @@
 package com.example.market;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,14 +14,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class MarketController {
     @Autowired
     MarketServicelmpl marketServicelmpl;
-//    @RequestMapping(value = "/list", method = RequestMethod.GET)
-//    public String marketist(Model model){
-//        model.addAttribute("list", marketServicelmpl.getMarketList());
-//        return "list";
-//    }
-    @RequestMapping(value = "/list")
-    public String marketist(){
-        return "board";
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public String marketList(Model model){
+        model.addAttribute("list", marketServicelmpl.getMarketList());
+        return "list";
     }
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String addPost(){
@@ -53,14 +51,18 @@ public class MarketController {
         return "redirect:../list";
     }
     @RequestMapping(value = "/view/{id}", method = RequestMethod.GET)
-    public String boardview(@PathVariable("id") int id, Model model){
+    public String marketView(@PathVariable("id") int id, Model model){
         MarketVO marketVO = marketServicelmpl.getMarket(id);
-        model.addAttribute("view", marketVO);
+        marketServicelmpl.updateViewCnt(id);
+//        marketServicelmpl.updateExposeTime(id);
+        model.addAttribute("u", marketVO);
         return "view";
     }
 
-    @RequestMapping(value="/login")
-    public String login(){
-        return "login";
-    }
+//    @RequestMapping(value = "/updatetime/{id}", method = RequestMethod.GET)
+//    public String updateExposeTime(@PathVariable("id") int id, Model model) {
+//        MarketVO marketVO = marketServicelmpl.updateExposeTime(id);
+//        model.addAttribute("u", marketVO);
+//        return "view";
+//    }
 }

@@ -17,38 +17,38 @@
 <table>
     <tr>
         <td class="sub">사진</td>
-        <td>${view.photoURL}</td>
+        <td>${u.photoURL}</td>
     </tr>
     <tr>
         <td class="sub">제목</td>
-        <td>${view.title}</td>
+        <td>${u.title}</td>
     </tr>
     <tr>
         <td class="sub">글쓴이</td>
-        <td>${view.writer}</td>
+        <td>${u.email}</td>
     </tr>
     <tr>
         <td class="sub">가격</td>
-        <td>${view.price}</td>
+        <td>${u.price}</td>
     </tr>
     <tr>
         <td class="sub">내용</td>
-        <td>${view.content}</td>
+        <td>${u.content}</td>
     </tr>
     <tr>
         <td class="sub">구매방법</td>
-        <td>${view.howPurchase}</td>
+        <td>${u.howPurchase}</td>
     </tr>
     <tr>
         <td class="sub">올린날짜</td>
-        <td>${view.createTime}</td>
+        <td>${u.createTime}</td>
     </tr>
     <tr>
         <td class="sub">조회수</td>
-        <td>${view.viewCnt}</td>
+        <td>${u.viewCnt}</td>
     </tr>
 </table>
-<input type="button" value="끌어올리기" />
-<input type="button" value="뒤로가기" onclick="history.back()"/>
+<button onclick="updateExposeTime(${u.id})">끌어올리기</button>
+<input type="button" value="뒤로가기" onclick="window.location.href='${pageContext.request.contextPath}/market/list'"/>
 </body>
 </html>

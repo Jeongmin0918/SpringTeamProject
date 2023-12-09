@@ -2,18 +2,18 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="SpringProject2:war exploded" />
+      <artifact name="SProject:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15baf41d-caea-4289-b1c7-bdf0cde669f1" name="Changes" comment="Changes">
+    <list default="true" id="15baf41d-caea-4289-b1c7-bdf0cde669f1" name="Changes" comment="코드 오류 수정 및 조회수 증가 완료">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/market/MarketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/market/MarketController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/market/MarketDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/market/MarketDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/market/MarketVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/market/MarketVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/list.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,15 +23,24 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
-        <option value="Interface" />
         <option value="Class" />
-        <option value="Jsp File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="356f5ad7-fe5f-438a-a138-ebda8283104d" />
+        <option name="url" value="https://github.com/Jeongmin0918/SpringTeamProject.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -69,11 +78,7 @@
   }
 }</component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.example.user" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/webapp/resources/css" />
       <recent name="C:\Users\yjy67\IdeaProjects\SpringTeamProject\src\main\java\com\example" />
       <recent name="C:\Users\yjy67\IdeaProjects\SpringTeamProject\src\main\webapp\resources\img" />
       <recent name="C:\Users\yjy67\IdeaProjects\SpringTeamProject\src\main\webapp\WEB-INF" />
@@ -83,17 +88,17 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Tomcat 9.0.54" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.54" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="Tomcat 9.0.82" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.82" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="SpringProject2:war exploded">
+        <artifact name="SProject:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/SpringProject2_war_exploded" />
+            <option name="CONTEXT_PATH" value="/SProject_war_exploded" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="0df14630-0620-4d80-bfba-551f1f1eb8c5" />
+        <option name="BASE_DIRECTORY_NAME" value="ef99d34e-231b-4cf6-a779-f77732540fe4" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -101,7 +106,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="51850" />
+        <option name="DEBUG_PORT" value="64671" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -166,7 +171,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="SpringProject2:war exploded" />
+          <artifact name="SProject:war exploded" />
         </option>
       </method>
     </configuration>
@@ -182,25 +187,32 @@
       <workItem from="1701523536508" duration="2157000" />
       <workItem from="1701525725631" duration="6686000" />
       <workItem from="1701759297088" duration="1311000" />
-      <workItem from="1701791744745" duration="6293000" />
-      <workItem from="1701867525519" duration="16311000" />
-      <workItem from="1701944602242" duration="3444000" />
-      <workItem from="1702012910651" duration="6375000" />
+      <workItem from="1702040135224" duration="119000" />
     </task>
+    <task id="LOCAL-00001" summary="코드 오류 수정 및 조회수 증가 완료">
+      <option name="closed" value="true" />
+      <created>1702034422602</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1702034422602</updated>
+    </task>
+    <task id="LOCAL-00002" summary="코드 오류 수정 및 조회수 증가 완료">
+      <option name="closed" value="true" />
+      <created>1702040197143</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1702040197143</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="코드 오류 수정 및 조회수 증가 완료" />
+    <option name="LAST_COMMIT_MESSAGE" value="코드 오류 수정 및 조회수 증가 완료" />
   </component>
 </project>
