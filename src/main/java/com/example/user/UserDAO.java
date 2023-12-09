@@ -26,7 +26,7 @@ public class UserDAO {
     }
 
     public UserVO login(UserVO vo){
-        String sql = "select * from users where email = ? and password = ?";
+        String sql = "select * from users where email = ? and password = HEX(AES_ENCRYPT(?, SHA2('encrypt-key', 512)))";
         try {
             System.out.println("Something");
             return jdbcTemplate.queryForObject(sql, new UserRowMapper(), vo.getEmail(), vo.getPassword());

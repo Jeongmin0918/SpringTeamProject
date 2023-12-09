@@ -1,5 +1,7 @@
 package com.example.market;
 
+import com.example.MarketUserVO;
+import com.example.user.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -40,36 +42,45 @@ public class MarketDAO {
         return jdbcTemplate.update(sql);
     }
 
-    class MarketRowMapper implements RowMapper<MarketVO> {
+    class MarketUserRowMapper implements RowMapper<MarketUserVO> {
         @Override
-        public MarketVO mapRow(ResultSet rs, int rowNum) throws SQLException {
-            MarketVO vo = new MarketVO();
-            vo.setId(rs.getInt("id"));
-            vo.setTitle(rs.getString("title"));
-//            vo.setEmail(rs.getString("email"));
-//            vo.setPassword(rs.getString("pw"));
-            vo.setPrice(rs.getInt("price"));
-            vo.setContent(rs.getString("content"));
-            vo.setHowPurchase(rs.getString("howPurchase"));
-            vo.setViewCnt(rs.getInt("viewCnt"));
-            Timestamp createTimeStamp = rs.getTimestamp("createTime");
-            LocalDateTime createTime = createTimeStamp.toLocalDateTime();
-            vo.setCreateTime(createTime);
-            Timestamp exposeTimeStamp = rs.getTimestamp("exposeTime");
-            LocalDateTime exposeTime = exposeTimeStamp.toLocalDateTime();
-            vo.setExposeTime(exposeTime);
-            return vo;
+        public MarketUserVO mapRow(ResultSet rs, int rowNum) throws SQLException {
+            MarketUserVO muvo = new MarketUserVO();
+
+            MarketVO mvo = new MarketVO();
+            UserVO uvo = new UserVO();
+
+            // MarketVO properties
+            mvo.setId(rs.getInt("id"));
+            mvo.setTitle(rs.getString("title"));
+            mvo.setPrice(rs.getInt("price"));
+            mvo.setContent(rs.getString("content"));
+            mvo.setHowPurchase(rs.getString("howPurchase"));
+            mvo.setViewCnt(rs.getInt("viewCnt"));
+            mvo.setCreateTime(rs.getTimestamp("createTime").toLocalDateTime());
+            mvo.setExposeTime(rs.getTimestamp("exposeTime").toLocalDateTime());
+
+            // UserVO properties
+            uvo.setEmail(rs.getString("email"));
+            uvo.setPassword(rs.getString("password"));
+
+            // Set MarketVO and UserVO to MarketUserVO
+            muvo.setMarket(mvo);
+            muvo.setUser(uvo);
+
+            return muvo;
         }
     }
 
-    public MarketVO getMarket(int id){
-        String sql = "select * from market where id= ?";
-        return jdbcTemplate.queryForObject(sql,new Object[]{id}, new MarketRowMapper());
+
+    public MarketUserVO getMarket(int id){
+        String sql = "SELECT * from market INNER JOIN users ON users.user_id = market.user_id where market.id = ?";
+        return jdbcTemplate.queryForObject(sql,new Object[]{id}, new MarketUserRowMapper());
     }
 
-    public List<MarketVO> getMarketList(){
-        String sql = "select * from market order by exposeTime desc";
-        return jdbcTemplate.query(sql, new MarketRowMapper());
+    public List<MarketUserVO> getMarketList(){
+        String sql = "SELECT * from market INNER JOIN users ON users.user_id = market.user_id order by exposeTime desc;";
+        return jdbcTemplate.query(sql, new MarketUserRowMapper());
     }
 
     public int updateViewCnt(int id) {

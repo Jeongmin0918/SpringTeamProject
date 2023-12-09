@@ -1,5 +1,6 @@
 package com.example.market;
 
+import com.example.MarketUserVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,12 +27,12 @@ public class MarketServicelmpl implements MarketService {
     }
 
     @Override
-    public MarketVO getMarket(int id) {
+    public MarketUserVO getMarket(int id) {
         return marketDAO.getMarket(id);
     }
 
     @Override
-    public List<MarketVO> getMarketList() {
+    public List<MarketUserVO> getMarketList() {
 //        List<MarketVO> list = marketDAO.getMarketList();
 //        for(MarketVO item : list){
 //            System.out.println(item.getTitle() + " " + item.getViewCnt());

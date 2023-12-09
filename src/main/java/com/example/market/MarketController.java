@@ -1,5 +1,6 @@
 package com.example.market;
 
+import com.example.MarketUserVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -17,7 +18,7 @@ public class MarketController {
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String marketList(Model model){
         model.addAttribute("list", marketServicelmpl.getMarketList());
-        return "list";
+        return "board";
     }
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String addPost(){
@@ -32,8 +33,8 @@ public class MarketController {
     }
     @RequestMapping(value = "/editform/{id}", method = RequestMethod.GET)
     public String editPost(@PathVariable("id") int id, Model model){
-        MarketVO marketVO = marketServicelmpl.getMarket(id);
-        model.addAttribute("u", marketVO);
+        MarketUserVO marketUserVO = marketServicelmpl.getMarket(id);
+        model.addAttribute("u", marketUserVO);
         return "editform";
     }
     @RequestMapping(value = "/editok", method = RequestMethod.POST)
@@ -52,10 +53,10 @@ public class MarketController {
     }
     @RequestMapping(value = "/view/{id}", method = RequestMethod.GET)
     public String marketView(@PathVariable("id") int id, Model model){
-        MarketVO marketVO = marketServicelmpl.getMarket(id);
+        MarketUserVO marketUserVO = marketServicelmpl.getMarket(id);
         marketServicelmpl.updateViewCnt(id);
 //        marketServicelmpl.updateExposeTime(id);
-        model.addAttribute("u", marketVO);
+        model.addAttribute("u", marketUserVO);
         return "view";
     }
 

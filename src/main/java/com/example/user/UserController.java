@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -48,7 +49,10 @@ public class UserController {
     }
 
     @RequestMapping(value="/loginOK", method = RequestMethod.POST)
-    public ResponseEntity<?> loginOK(@ModelAttribute UserVO vo) {
+    public ResponseEntity<?> loginOK(HttpSession session, UserVO vo) {
+        if(session.getAttribute("login") != null){
+            session.removeAttribute("login");
+        }
         UserVO user = userServiceImpl.login(vo);
         if(user == null){
             System.out.println("Controller return : null");
@@ -57,6 +61,7 @@ public class UserController {
                     .body("login failed");
         }
         else {
+            session.setAttribute("login", user);
             System.out.println("Controller return : OK");
             return ResponseEntity
                     .status(HttpStatus.OK)

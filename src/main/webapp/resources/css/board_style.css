@@ -1,5 +1,6 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #f8f9fa!important
 }
 
 .gallery {
@@ -29,4 +30,32 @@ body {
 
 .description h3 {
     margin-top: 0;
+}
+
+.board-container {
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    color: #ff6600;
+}
+
+.card-text {
+    color: #333;
+}
+
+.bg-light{
+    background-color:#fff!important;
+}
+
+#addBtn{
+    display:flex;!important;
+    justify-content: end;!important;
 }
