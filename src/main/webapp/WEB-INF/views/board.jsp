@@ -47,7 +47,7 @@
               <p class="card-text">${u.user.email}</p>
               <p class="card-text">조회수: ${u.market.viewCnt}</p>
               <a href="editform/${u.market.id}" class="btn btn-primary">글 수정</a>
-<%--              <a href="view/${u.market.id}" class="btn btn-primary">글 조회</a>--%>
+              <a href="view/${u.market.id}" class="btn btn-primary">글 조회</a>
               <a href="javascript:delete_ok('${u.market.id}')" class="btn btn-danger">글 삭제</a>
             </div>
           </div>
