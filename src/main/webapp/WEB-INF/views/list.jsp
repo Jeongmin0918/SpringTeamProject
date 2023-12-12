@@ -31,7 +31,6 @@
             var a = confirm("정말로 삭제하겠습니까?");
             if(a) location.href='deleteok/' + id;
         }
-
     </script>
 </head>
 <body>

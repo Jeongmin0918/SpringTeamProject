@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
 	<title>물품 수정</title>
@@ -35,7 +36,7 @@
 	<div class="container mt-3">
 		<h1>물품 수정</h1>
 		<form modelAttribute="u" method="POST" action="../editok">
-			<form:hidden path="id"/>
+			<input type="hidden" name="id" value="${u.market.id}" />
 			<table class="table">
 				<tr>
 					<td>사진:</td>
