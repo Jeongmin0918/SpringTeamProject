@@ -45,6 +45,7 @@
             <div class="card-body">
               <h5 class="card-title">${u.market.title}</h5>
               <p class="card-text">${u.user.email}</p>
+              <p class="card-text">${u.market.createTime} ${u.market.exposeTime}</p>
               <p class="card-text">조회수: ${u.market.viewCnt}</p>
               <a href="editform/${u.market.id}" class="btn btn-primary">글 수정</a>
               <a href="view/${u.market.id}" class="btn btn-primary">글 조회</a>

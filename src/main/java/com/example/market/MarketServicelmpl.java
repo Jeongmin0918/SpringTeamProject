@@ -45,7 +45,7 @@ public class MarketServicelmpl implements MarketService {
     public int updateViewCnt(int id) {
         return marketDAO.updateViewCnt(id);
     }
-//    @Override
-//    public void updateExposeTime(int id) {
-//    }
+    @Override
+    public int updateExposeTime(int id) {return marketDAO.updateExposeTime(id);
+    }
 }

@@ -57,8 +57,8 @@ public class MarketDAO {
             mvo.setContent(rs.getString("content"));
             mvo.setHowPurchase(rs.getString("howPurchase"));
             mvo.setViewCnt(rs.getInt("viewCnt"));
-            mvo.setCreateTime(rs.getTimestamp("createTime").toLocalDateTime());
-            mvo.setExposeTime(rs.getTimestamp("exposeTime").toLocalDateTime());
+            mvo.setCreateTime(rs.getDate("createTime"));
+            mvo.setExposeTime(rs.getTime("exposeTime"));
 
             // UserVO properties
             uvo.setEmail(rs.getString("email"));
@@ -88,8 +88,8 @@ public class MarketDAO {
         return jdbcTemplate.update(sql, id);
     }
 
-//    public MarketVO updateExposeTime(int id) {
-//        String sql = "UPDATE market SET exposeTime = NOW() WHERE id = ?";
-//        return jdbcTemplate.queryForObject(sql,new Object[]{id}, new MarketRowMapper());
-//    }
+    public int updateExposeTime(int id) {
+        String sql = "UPDATE market SET exposeTime = NOW(), createTime = NOW() WHERE id = ?";
+        return jdbcTemplate.update(sql, id);
+    }
 }

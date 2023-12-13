@@ -34,6 +34,7 @@ public class MarketController {
     @RequestMapping(value = "/editform/{id}", method = RequestMethod.GET)
     public String editPost(@PathVariable("id") int id, Model model){
         MarketUserVO marketUserVO = marketServicelmpl.getMarket(id);
+        marketServicelmpl.updateExposeTime(id);
         model.addAttribute("u", marketUserVO);
         return "editform";
     }
@@ -55,15 +56,7 @@ public class MarketController {
     public String marketView(@PathVariable("id") int id, Model model){
         MarketUserVO marketUserVO = marketServicelmpl.getMarket(id);
         marketServicelmpl.updateViewCnt(id);
-//        marketServicelmpl.updateExposeTime(id);
         model.addAttribute("u", marketUserVO);
         return "view";
     }
-
-//    @RequestMapping(value = "/updatetime/{id}", method = RequestMethod.GET)
-//    public String updateExposeTime(@PathVariable("id") int id, Model model) {
-//        MarketVO marketVO = marketServicelmpl.updateExposeTime(id);
-//        model.addAttribute("u", marketVO);
-//        return "view";
-//    }
 }

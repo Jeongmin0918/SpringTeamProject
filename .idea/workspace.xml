@@ -9,9 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15baf41d-caea-4289-b1c7-bdf0cde669f1" name="Changes" comment="코드 오류 수정">
+    <list default="true" id="15baf41d-caea-4289-b1c7-bdf0cde669f1" name="Changes" comment="글 조회 추가 및 view 페이지 수정 및 list페이지 삭제">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/market/MarketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/market/MarketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/market/MarketDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/market/MarketDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/market/MarketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/market/MarketService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/market/MarketServicelmpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/market/MarketServicelmpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/market/MarketVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/market/MarketVO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/board.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/board.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/editform.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/editform.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/view.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -191,7 +197,8 @@
       <workItem from="1702352290971" duration="156000" />
       <workItem from="1702360344471" duration="822000" />
       <workItem from="1702366684260" duration="2770000" />
-      <workItem from="1702382161547" duration="4677000" />
+      <workItem from="1702382161547" duration="5312000" />
+      <workItem from="1702433569766" duration="1758000" />
     </task>
     <task id="LOCAL-00001" summary="코드 오류 수정 및 조회수 증가 완료">
       <option name="closed" value="true" />
@@ -225,7 +232,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702388682764</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="글 조회 추가 및 view 페이지 수정 및 list페이지 삭제">
+      <option name="closed" value="true" />
+      <created>1702389208148</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1702389208148</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,6 +250,7 @@
     <MESSAGE value="코드 오류 수정 및 조회수 증가 완료" />
     <MESSAGE value="코드 오류 수정 및 끌어오기 커멘트처리" />
     <MESSAGE value="코드 오류 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="코드 오류 수정" />
+    <MESSAGE value="글 조회 추가 및 view 페이지 수정 및 list페이지 삭제" />
+    <option name="LAST_COMMIT_MESSAGE" value="글 조회 추가 및 view 페이지 수정 및 list페이지 삭제" />
   </component>
 </project>

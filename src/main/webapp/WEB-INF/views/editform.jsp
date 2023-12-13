@@ -51,6 +51,10 @@
 					<td>${u.user.email}</td>
 				</tr>
 				<tr>
+					<td>날짜:</td>
+					<td>${u.market.createTime} ${u.market.exposeTime}</td>
+				</tr>
+				<tr>
 					<td>가격:</td>
 					<td>
 						<div class="input-group">

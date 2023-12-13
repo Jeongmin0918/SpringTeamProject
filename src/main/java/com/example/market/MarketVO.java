@@ -12,8 +12,8 @@ public class MarketVO {
     private int price;
     private String content;
     private String howPurchase;
-    private LocalDateTime createTime;
-    private LocalDateTime exposeTime;
+    private Date createTime;
+    private Date exposeTime;
     private int viewCnt;
 
     public int getId() {
@@ -80,20 +80,19 @@ public class MarketVO {
         this.howPurchase = howPurchase;
     }
 
-
-    public LocalDateTime getCreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(LocalDateTime createTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
-    public LocalDateTime getExposeTime() {
+    public Date getExposeTime() {
         return exposeTime;
     }
 
-    public void setExposeTime(LocalDateTime exposeTime) {
+    public void setExposeTime(Date exposeTime) {
         this.exposeTime = exposeTime;
     }
 
