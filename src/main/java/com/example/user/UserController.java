@@ -40,7 +40,7 @@ public class UserController {
     @RequestMapping(value="/signupOK", method = RequestMethod.POST)
     public String signupOK(UserVO vo){
         userServiceImpl.signup(vo);
-        return "home";
+        return "board";
     }
 
     @RequestMapping(value="/login")
